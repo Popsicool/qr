@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="../CSS/faq.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="fd">
+      <a href="{% url 'generator:index' %}">
+      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
+      <label id="flab" display="in-line">
+        QR Gen
+      </label></a>
+      <nav display="in-line">
+        <a href="{% url 'generator:aboutus' %}">About Us</a>
+        <a href="{% url 'generator:faq' %}">FAQ</a>
+        <a href="{% url 'generator:contactus' %}">Contact Us</a>
+        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
+    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
+      </nav>
+    </div>
+
+  <div id="sd">
+    <h1 id="fh1">FAQ</h1>
+    <p id="fp">If you have any questions that you can't answer through our FAQs, don't hesitate to contact our team. </p>
+  </div>
+
+  <div id="td">
+    <h1 id="sh1">Frequently Asked Questions</h1>
+    <ul>
+      <li><label>What is QR code?
+      <select>
+        <option>..</option>
+        <option> QR code is a machine-readable code consisting of an array of black and white squares, typically used for storing URLs or other information for reading by the camera on a smartphone.</option></select>
+      </label></li>
+<br>
+      <li><label>How can i generate my own QR code?
+      <select>
+        <option>..</option>
+        <option>Go to the Generate code section, input your URL, Click generate and test the QR code if it directs to the correct link.</option></select>
+      </label></li>
+<br>
+      <li><label>Can i edit my QR code?
+      <select>
+        <option>..</option>
+        <option>Yes, as long as the original QR Code is Dynamic.  </option></select>
+      </label></li>
+<br>
+      <li><label>How can i print my QR code?
+      <select>
+        <option>..</option>
+        <option>As long as you have the QR code as an image file, then you can print it out on a document, poster, brochure or banner sign. Printing QR codes onto paper is a convenient way to target people with mobile phones, as the codes are easy to scan.</option></select>
+      </label></li>
+<br>
+      <li><label>Where can i download my invoice
+      <select>
+        <option>..</option>
+        <option>Scan the QR code on e-invoice using e invoice scanner, e invoice QR code scanner, or e invoice barcode scanner.</option></select>
+      </label></li>
+<br>
+      <li><label>What data is collected in dynamic QR scan
+      <select>
+        <option>..</option>
+        <option>Number and statistical data</option></select>
+      </label></li>
+<br>
+      <li><label>Can i customize the text of my QR?
+      <select>
+        <option>..</option>
+        <option>Yes</option></select>
+      </label></li>
+      
+    </ul>
+  </div>
+
+  <div id="downdiv">
+      <img src="../img/footerLogo.png" alt="" id="footerLogo">
+      <div id="dd">
+        <p><b>Contact</b></p>
+        <p>QRcodegen@gmail.com</p>
+        <p>08165396547</p>
+        <p></p>
+      </div>
+
+       <div id="dd">
+        <p><b>About Us</b></p>
+        <p>Contact Us</p>
+        <p>Advertise Us</p>
+        <p>Create QRcode</p>
+      </div>
+       <div id="dd">
+        <p><b>Information</b></p>
+        <p>FAQ</p>
+        <p>Privacy policy</p>
+        <p>Cookies policy</p>
+      </div>
+      <div id="dd">
+        <p><b>Review</b></p>
+        <p>Google</p>
+        <p>Twitter</p>
+        <p>Facebook</p>
+      </div>
+
+       <div id="dd">
+        <p><b>Subscribe to Newsletter</b></p>
+        <p>Get daily update about QR code generator</p>
+        <p></p>
+        <label font-size="7px" color="white" class="">
+          <input type="email" placeholder="email address" class="email">
+          <a href="" id="subs">Subscribe</a>
+        </label>
+ </div> 
+    </div>
+<div id="footer">
+  <hr></hr>
+  <footer>
+    <p id="3p">Copyright@2022. All right reserved.</p>
+  </footer>
+</div>
+    
+ 
+  <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>  -->
+</body>
+
+</html>

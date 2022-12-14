@@ -1,0 +1,78 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MetaData Extractor | Get detailed information on your files</title>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="../../static/css/extract.css"> -->
+	<!-- <link rel="stylesheet" href="../../static/css/about.css"> -->
+</head>
+
+<body>
+  <section class="autentication-form">
+		<div class="left-column" id="login-left">
+			<img src="{% static 'images/login-bg.png' %}" alt="" />
+		</div>
+		<div class="right-column">
+			<div class="form-header">
+				<h1>{% block head_title %}{% trans "Sign In" %}{% endblock %}</h1>
+        {% block content %}
+<div class="text-center">
+    <h1>{% trans "Account Connections" %}</h1>
+
+    {% if form.accounts %}
+    <p>{% blocktrans %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}</p>
+
+
+    <form method="post" action="{% url 'socialaccount_connections' %}">
+    {% csrf_token %}
+
+    <fieldset>
+    {% if form.non_field_errors %}
+    <div id="errorMsg">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    {% for base_account in form.accounts %}
+    {% with base_account.get_provider_account as account %}
+    <div>
+    <label for="id_account_{{ base_account.id }}">
+    <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>
+    <span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }}">{{account.get_brand.name}}</span>
+    -> {{ account }}
+    </label>
+    </div>
+    {% endwith %}
+    {% endfor %}
+
+    <div class="my-2">
+    <button class="btn btn-dark" type="submit">{% trans 'Remove' %}</button>
+    </div>
+
+    </fieldset>
+
+    </form>
+
+    {% else %}
+    <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+    {% endif %}
+
+    <hr>
+    <h3>{% trans 'Add a 3rd Party Account' %}</h3>
+
+    <div class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+</div>
+
+{% endblock %}
+</body>

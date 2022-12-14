@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/aboutCss.css' %}" />
+  </head>
+  <body>
+  <div id="fd">
+      <a href="{% url 'generator:index' %}">
+      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
+      <label id="flab" display="in-line">
+        QR Gen
+      </label></a>
+      <nav display="in-line">
+        <a href="{% url 'generator:aboutus' %}">About Us</a>
+        <a href="{% url 'generator:faq' %}">FAQ</a>
+        <a href="{% url 'generator:contactus' %}">Contact Us</a>
+        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
+    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="conatinerLeft">
+        <img src="./img/Frame.png" alt="" />
+      </div>
+      <div class="conatinerRight">
+        <h1>About us</h1>
+        <p>
+          We are a group of team dedicated to providing QR Code services to our
+          clients. Our service ranges from real time to offline QR Code
+          optimization.
+        </p>
+
+      </div>
+    </section>
+
+    <div id="downdiv">
+      <img src="../img/footerLogo.png" alt="" id="footerLogo">
+      <div id="dd">
+        <p><b>Contact</b></p>
+        <p>QRcodegen@gmail.com</p>
+        <p>08165396547</p>
+        <p></p>
+      </div>
+
+       <div id="dd">
+        <p><b>About Us</b></p>
+        <p>Contact Us</p>
+        <p>Advertise Us</p>
+        <p>Create QRcode</p>
+      </div>
+       <div id="dd">
+        <p><b>Information</b></p>
+        <p>FAQ</p>
+        <p>Privacy policy</p>
+        <p>Cookies policy</p>
+      </div>
+      <div id="dd">
+        <p><b>Review</b></p>
+        <p>Google</p>
+        <p>Twitter</p>
+        <p>Facebook</p>
+      </div>
+
+       <div id="dd">
+        <p><b>Subscribe to Newsletter</b></p>
+        <p>Get daily update about QR code generator</p>
+        <p></p>
+        <label font-size="7px" color="white" class="">
+          <input type="email" placeholder="email address" class="email">
+          <a href="" id="subs">Subscribe</a>
+        </label>
+ </div> 
+    </div>
+<div id="footer">
+  <hr></hr>
+  <footer>
+    <p id="3p">Copyright@2022. All right reserved.</p>
+  </footer>
+</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

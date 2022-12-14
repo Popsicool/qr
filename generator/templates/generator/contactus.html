@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Contact page</title>
+  <link href="{% static 'css/contactUs.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- navbar -->
+
+  <div id="fd">
+    <a href="{% url 'generator:index' %}">
+      <img src="{% static 'images/logo.png' %}" alt="" id="logo">
+      <label id="flab" display="in-line">
+        QR Gen
+      </label></a>
+      <nav display="in-line">
+        <a href="{% url 'generator:aboutus' %}">About Us</a>
+        <a href="{% url 'generator:faq' %}">FAQ</a>
+        <a href="{% url 'generator:contactus' %}">Contact Us</a>
+        <a id="asi" href="{% url 'generator:login' %}">Sign In</a>
+    <a id="asu" href="{% url 'generator:signup' %}">Sign Up</a>
+      </nav>
+    </div>
+    <div class="top">
+      <img src="../img/contact.png" alt="">
+    </div>
+    <div class="container1">
+      <div class="content">
+        <h1>Get in touch</h1>
+        <div class="base-content">
+          <div class="more-content">
+            <div class="imageBox">
+              <img src="../img/map.png" alt="">
+            </div>
+            <p>Lagos Nigeria</p>
+          </div>
+          <div class="more-content">
+            <div class="imageBox">
+              <img src="../img/phone.png" alt="">
+            </div>
+            <p>+234 (0) 803-581-5551</p>
+          </div>
+          <div class="more-content">
+            <div class="imageBox">
+              <img src="../img/email.png" alt="">
+            </div>
+            <p>contact@qrgen.com</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="container2">
+      <div class="left-con">
+        <h1>Leave a message</h1>
+        <p>Kindly leave us a message, regarding any complaints, enquiries and we’ll be in touch shortly.</p>
+      </div>
+      <div class="right-con">
+        <h1>We are here for you</h1>
+        <div id="div2">
+          <form action="{% url 'generator:contactus' %}" method="POST">
+            {% csrf_token %}
+            <br>
+            <label>Enter your Name<br><input type="text" placeholder="Tolu Ariyo" name="name" required></label>
+            <label>Enter your Email<br><input type="email" placeholder="ariyo@example.com" name="email" required ></label>
+            
+            <label>MESSAGE<br><Input type="text" class="minp" name="message" required></label> <br>
+    <br>
+            <br>
+            <button id="send" color="white"><b>SEND</b></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+
+    <div id="downdiv">
+      <img src="../img/footerLogo.png" alt="" id="footerLogo">
+      <div id="dd">
+        <p><b>Contact</b></p>
+        <p>QRcodegen@gmail.com</p>
+        <p>08165396547</p>
+        <p></p>
+      </div>
+
+       <div id="dd">
+        <p><b>About Us</b></p>
+        <p>Contact Us</p>
+        <p>Advertise Us</p>
+        <p>Create QRcode</p>
+      </div>
+       <div id="dd">
+        <p><b>Information</b></p>
+        <p>FAQ</p>
+        <p>Privacy policy</p>
+        <p>Cookies policy</p>
+      </div>
+      <div id="dd">
+        <p><b>Review</b></p>
+        <p>Google</p>
+        <p>Twitter</p>
+        <p>Facebook</p>
+      </div>
+
+       <div id="dd">
+        <p><b>Subscribe to Newsletter</b></p>
+        <p>Get daily update about QR code generator</p>
+        <p></p>
+        <label font-size="7px" color="white" class="">
+          <input type="email" placeholder="email address" class="email">
+          <a href="" id="subs">Subscribe</a>
+        </label>
+ </div> 
+    </div>
+<div id="footer">
+  <hr></hr>
+  <footer>
+    <p id="3p">Copyright@2022. All right reserved.</p>
+  </footer>
+</div>
+</body>
+
+</html>

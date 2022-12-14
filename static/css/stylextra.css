@@ -1,0 +1,22 @@
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    background-color: rgb(76, 81, 87);
+    }
+    
+    @media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+    }
+
+body {
+    background-color: #6F50B5;
+} 
+
+div #left-side {
+    background-color: #B7A8DA;
+}
