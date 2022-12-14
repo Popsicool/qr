@@ -1,0 +1,1 @@
+web: gunicorn qr_generaator.wsgi --log-file -
