@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Welcome {{user.email}}</h3>
+    <a href="{% url 'generator:logout' %}"> Log out</a>
+    Dashboard
+    <br>
+    <a href="{% url 'generator:generate_qr' %}"> Generate QR</a>
+    <br>
+    My QRs <br>
+    {% for qr in qr %}
+    <!-- <img src="./logo.png" alt="aa" width="70"> -->
+    <a href="{% url 'generator:download' qr.id 'png' %}"> Download png</a>
+    <a href="{% url 'generator:download' qr.id 'pdf' %}"> Download pdf</a>
+    <!-- <a href="{% url 'generator:download' qr.id 'jpg' %}"> Download jpg</a> -->
+    <a href="{% url 'generator:download' qr.id 'svg' %}"> Download svg</a>
+    <a href="{% url 'generator:download' qr.id 'jpeg' %}"> Download jpeg</a>
+    <a href="{% url 'generator:delete' qr.id %}">Delete QR</a>
+    <br>
+    {% endfor %}
+    
+
+</body>
+</html>

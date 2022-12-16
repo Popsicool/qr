@@ -1,0 +1,19 @@
+.download-buttons > button{
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px #484848 solid;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 32px;
+
+}
+.download-buttons{
+    margin-left: 25%;
+}
+.atv{
+        color:  rgba(111, 80, 181, 1);
+    }
+

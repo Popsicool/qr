@@ -1,0 +1,41 @@
+.footer{
+  background: rgba(111, 80, 181, 1);
+  padding: 5%;
+  /* height: 494px; */
+}
+
+.footer-buttom{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+.u1{
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.foot-col{
+  color: rgba(255, 255, 255, 1);
+
+  size: 20px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+.foot-col > h3{
+  text-align: left;
+  size: 21px;
+  font-weight: 700;
+}
+.form{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.form > input{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  height: 30px;
+}
+.sub{
+  background-color: rgba(226, 220, 240, 1);
+   border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}

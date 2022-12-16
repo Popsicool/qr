@@ -1,48 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Generate QR
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-    <br>
+<div class="top1">
+	<h3>Create QR Code</h3>
+	<div class="ima">
+		<img src="{% static 'images/Group 14.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 1.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 15.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 2.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 16.png' %}" alt="title-img" />
+	</div>
+</div>
+<div class="all-cards">
+    <h3>Choose Category</h3>
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame lap.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 1.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 3.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Framez.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
 
-    <div class="page active" id="p1">
-              <!-- <section id="url"> -->
-                <p class="title">Enter URL or Link</p>
-                <form action="{% url 'generator:generate_qr' %}" method="post" id="url-input">
-                  {% csrf_token %}
-                  <input type="text" placeholder="Input URL/Link" name="url-link" required/>
-                </form>
-                <button type="submit" form="url-input">Generate QR Code</button>
-              <!-- </section> -->
-            </div>
+</div>
 
-            <div class="page" id="p2">
-              <!-- <section id="store"> -->
-              <p class="title">Enter URL or Link</p>
-              <form action="{% url 'generator:generate_qr' %}" method="post" id="app-store">
-                {% csrf_token %}
-                <input type="url" placeholder="Enter Link to Application" name="text" required/>
-                <input type="submit">Generate QR Code</button>
-              </form>
-              
-              
-              <!-- </section> -->
-            </div>
-            <div class="page" id="p3">
-              <!-- <section id="store"> -->
-              <p class="title">Enter a Text</p>
-              <form action="{% url 'generator:generate_qr' %}" method="post" id="text-input">
-                {% csrf_token %}
-                <textarea name="text" id="message" name="text"></textarea>
-              </form>
-              <button type="submit" form="text-input">Generate QR Code</button>
-              <!-- </section> -->
-            </div>
-</body>
-</html>
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (1).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (2).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (3).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+
+</div>
+
+
+<div class="card-row">
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (4).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Framer.png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (5).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+    <div class="card">
+        <img class="card-img" src="{% static 'images/Frame 33849 (6).png' %}" alt="">
+        <h3>Webiste</h3>
+        <p>Open a url</p>
+        <small>preview</small>
+    </div>
+
+</div>
+
+</div>
+
+
+<div class="button">
+    <a href="{% url 'generator:dashboard' %}"><button class="cancel">Cancel</button></a>
+    <a href="{% url 'generator:genqr2' %}"><button class="next">Next</button></a>
+</div>
+
+
+{% endblock %}

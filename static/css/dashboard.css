@@ -1,0 +1,161 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  margin-top: 50px;
+  margin-left: 50px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-around; */
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-inline: 500px;
+}
+
+
+.coantainer-fluid{
+    display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(244, 240, 252);
+  margin-top: 50px;
+  border-radius: 3px;
+  margin-right: 650px;
+  /* padding-right: 200px; */
+}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 70%;
+
+}
+.btn-1{
+  
+    box-shadow: none;
+    padding: 10px 15px;
+    background: rgb(111,80,181);
+    border-radius: 3px;
+    border: none;
+    font-size: 10px;
+    font-weight: 200;
+} 
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+} 
+.section-form{
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+   
+}
+.edit{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+
+}
+
+.scan{
+    margin-right: 100px;
+}
+ .edi{
+    margin-right: 100px;
+
+ }
+   
+ .btn-3{
+    margin-right: 100px;
+
+ }
+   
+ .btn-4{
+    margin-right: 100px;
+
+ }
+   .img-1{
+    width: 30%;
+   }
+   .section-b{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+    .section-formb{
+        display: flex;
+        align-items: center;
+        margin-right: 30%;
+    }
+    .section-c{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    
+    .section-formc{
+        display: flex;
+        align-items: center;
+        margin-right: 30%;
+      
+    }
+    .btnsubmit{
+        box-shadow: none;
+        padding: 8px 10px;
+        background: rgb(111,80,181);
+        border-radius: 3px;
+        border: none;
+        font-size: 10px;
+        font-weight: 200;
+    }
+    .btnfolder{
+        box-shadow: none;
+        padding: 10px 20px;
+        /* background: rgb(111,80,181); */
+        border-radius: 3px;
+        border: none;
+        font-size: 10px;
+        font-weight: 200;
+    }
+    .btn{
+  
+            box-shadow: none;
+            padding: 10px 15px;
+            background: rgb(111,80,181);
+            border-radius: 3px;
+            border: none;
+            font-size: 10px;
+            font-weight: 200;
+        } 
+        .btn-3{
+  
+            box-shadow: none;
+            padding: 10px 15px;
+            background: rgb(111,80,181);
+            border-radius: 3px;
+            border: none;
+            font-size: 10px;
+            font-weight: 200;
+        } 
+        .btn-4{
+  
+            box-shadow: none;
+            padding: 10px 15px;
+            
+            border-radius: 3px;
+            border: none;
+            font-size: 10px;
+            font-weight: 200;
+        } 
+    

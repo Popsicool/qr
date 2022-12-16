@@ -218,7 +218,7 @@ def convert_to_pdf(path):
 class download_file(LoginRequiredMixin, View):
     def get(self, request, id, file_type):
         if (id == "" or file_type == ""):
-            messages.info(request, "invalid doenload credentials")
+            messages.info(request, "invalid download credentials")
             return redirect('generator:dashboard')
         qr = QRCollection.objects.get(id=id, qr_user = request.user).qr_code
         obj = MEDIA_ROOT + '/' + str(qr)
@@ -248,3 +248,53 @@ class delete_file(LoginRequiredMixin, View):
             return redirect('generator:dashboard')
         except:
             return redirect('generator:dashboard')
+
+
+class genqr2(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'generator/qrContent.html')
+    def post(self, request):
+        qr_name = request.POST["name"]
+        qr_url = request.POST["text"]
+        request.session["qr_name"] = qr_name
+        request.session["qr_name"] = qr_url
+        return redirect('generator:download_qr')
+class qr_design(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'generator/qr_design.html')
+
+class download_qr(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'generator/download.html')
+    def post(self, request):
+        file_type = request.POST["type"]
+        file_type = file_type.lower()
+        qr_name = request.session.get("qr_name")
+        qr_url = request.session.get("qr_url")
+        try:
+            qr = QRCollection.objects.create(
+                    qr_user = request.user,
+                    category = 'TEXT',
+                    qr_info = qr_name,
+                    )
+            qr = qr.qr_code
+        except:
+            qr = "default.jpeg"
+        obj = MEDIA_ROOT + '/' + str(qr)
+        if file_type == "pdf":
+            filepath, filename = convert_to_pdf(obj)
+        elif file_type == "png":
+            filepath, filename = convert_to_png(obj)
+        elif file_type == "jpg":
+            filepath, filename = convert_to_jpg(obj)
+        elif file_type == "svg":
+            filepath, filename = convert_to_svg(obj)
+        elif file_type == "jpeg":
+            filepath, filename = convert_to_jpeg(obj)
+        path = open(filepath, 'rb')
+        mime_type, _ = mimetypes.guess_type(filepath)
+        response = HttpResponse(path, content_type=mime_type)
+        response['Content-Disposition'] = "attachment; filename=%s" % filename
+        return response
+
+        return render(request, 'generator/qr_design.html')

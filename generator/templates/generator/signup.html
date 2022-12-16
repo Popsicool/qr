@@ -1,104 +1,73 @@
-{% load static %}
+{%  load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup page</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'css/stylextra.css' %}">
+  <link rel="stylesheet" href="{% static 'css/auth.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>Sign up</title>
 </head>
 <body>
-    <body>
-       
-      <section class="vh-100" id="background">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-sm-6 text-black">
-          
-                  <div class="px-5 ms-xl-4">
-                    <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #a3a5a4;"></i>
-                    <span class="h1 fw-bold mb-0"><img src="{% static 'images/Frame 33876.png' %}"></span>
-                  </div>
-          
-                  <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                    {% for message in messages %}
-                    {{ message }}
-                    {% endfor %}
-          
-                    <form action="{% url 'generator:signup' %}" method="POST" style="width: 23rem;">
-                       {% csrf_token %}
-                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create  an Account</h3>
-                        <p class="small mb-5 pb-lg-2" style=" letter-spacing: 1px;">Lets help you generate the best Qr code</p>
-              
-          
-                      
-          
-                      <div class="form-outline mb-4">
-                        
-                        <label class="form-label" for="form2Example18">Your Name</label>
-                        <input type="text" id="form2Example18" name="name" class="form-control form-control-lg" />
-                        
-                      </div>
-          
-                      <div class="form-outline mb-4">
-                        
-                        <label class="form-label" for="form2Example18">Email address</label>
-                        <input type="email" id="form2Example18" name="email" class="form-control form-control-lg" />
-                        
-                      </div>
-          
-                      
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example28">Phone number</label>
-                        <input type="tel" id="form2Example28" name="phone_number" class="form-control form-control-lg" />
-                        </div>
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example28">Password</label>
-                        <input type="password" id="form2Example28" name="password" class="form-control form-control-lg" />
-                        </div>
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example28">Re-enter Password</label>
-                        <input type="password" id="form2Example28" name="password2" class="form-control form-control-lg" />
+  <div class="auth">
+  <div class="sign-left">
+    <div class="auth-form">
 
-                        <p class="small mb-2 pb-lg-2" style=" letter-spacing: 1px;">password should be alpha-numeric</p>
-                        </div>
-                        
-                        
-                        <div class="form-check">
-                          <input class="form-check-input me-2" type="checkbox" value="" id="form1Example3" checked />
-                          <label class="form-check-label small mb-5 pb-lg-2" for="form1Example3"> By creating an account you agree to our terms and conditions </label>
-                        </div>
-              
-                      <div class="pt-1 mb-4">
-                        <button class="btn btn-info btn-lg btn-block " type="submit">Create Account</button>
+    <form action="{% url 'generator:signup' %}" method="POST">
+      {% csrf_token %}
+      {% for message in messages %}
+      <p class="message">{{message}}</p>
+      {% endfor %}
+      <h2>Create an account</h2>
+      <p>Lets help you generate your best  QR codes</p>
+      <label for="name">Your Name</label><br>
+      <input type="text" name="name" placeholder="Tolu Ariyo" required><br>
+      <label for="email">Email</label> <br>
+      <input type="email" name="email" placeholder="abc@gmail.com" required><br>
+      <label for="phone">Phone Number</label><br>
+      <input type="tel" placeholder="080000000000" name="phone_number" required><br>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+  <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <label for="password2">Re-enter Password</label><br>
+      <input type="password" name="password2" autocomplete="current-password" required="" id="id_password2">
+  <i class="far fa-eye" id="togglePassword2" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <br><br><input type="checkbox" class="check" required> By creating an account, you agree to our terms and conditions
+  <br>    
+  <button class="acc-cre" type="submit">Create Account</button>
+    </form>
+    <p class="bbb">Already have an account? <a href="{% url 'generator:login' %}">Log in</a></p>
+    </div>
+  </div>
+  <div class="sign-right">
+    <img src="{% static 'images/Frame 33985.png' %}" alt="">
+  </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
 
-                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Already have an account?</a><span><a href="{% url 'generator:login' %}" class="link-info"  style=" letter-spacing: 1px;"> Log In</a></span></p>
-                        </div>
-                      
-                      <div class="d-flex justify-content-around align-items-center mb-4">
-                        <!-- Checkbox -->
-                        <div class="form-check">
-                          
-                        </div>
-                       
-                      </div>
-                      
-                      </form>
-                      </div>
-                      </div>
-                
-                <div class="col-sm-6 px-0 d-none d-sm-block ">
-                  <img src="{% static 'images/rafiki.png' %}"
-                    alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;" >
-                </div>
-              </div>
-            </div>
-          </section> 
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>      
-        
-            
-       
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
+
+    <script>
+    const togglePassword2 = document.querySelector('#togglePassword2');
+  const password2 = document.querySelector('#id_password2');
+
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
 </body>
 </html>

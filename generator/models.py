@@ -78,12 +78,8 @@ class QRCollection(models.Model):
     qr_code = models.ImageField(upload_to='all_qr/')
     qr_info = models.CharField(max_length=200, blank=True, null=True)
 
-    def save(self,*args,**kwargs):
-
-    
+    def save(self,*args,**kwargs):    
         # adjust image size
-
-
         QRcode = qrcode.QRCode(
         version=3,
         box_size = 10,

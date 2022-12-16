@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/createQR.css' %}"/>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="fd">
+        <img src="{% static 'images/footerLogo.png' %}" alt="" id="logo">
+        <label id="flab" display="in-line">
+          QR Gen
+        </label>
+        <nav display="in-line">
+          <div class="top-nav">
+            <img src="{% static 'images/bell.png' %}" alt="">
+            <img src="{% static 'images/finegirl.png' %}" alt="">
+            <div class="image-top">
+              <h5>{{user.name}}</h5>
+              <p>{{user.email}}</p>
+            </div>
+          </div>
+        </nav>
+      </div>
+    <form class="contianer-fluid">
+        <div class="container">
+            <h2 class="title">
+                Create Qr code
+            </h2>
+            <div class="img-grp">
+               <img src="{% static 'images/Group 14.png' %}"alt="title-img"/>
+               <img src="{% static 'images/Arrow 1.png' %}" class="arrows" alt="title-img"/>
+               <img src="{% static 'images/Group 15.png' %}"alt="title-img"/>
+               <img src="{% static 'images/Arrow 2.png' %}"  class="arrows" alt="title-img"/>
+               <img src="{% static 'images/Group 16.png' %}"alt="title-img"/>
+
+            </div>
+            <h3>Choose catergory</h3>
+            <div class="frame-col">
+                <img src="{% static 'images/Frame lap.png' %}"/>
+               
+                <img src="{% static 'images/Frame 1.png' %}"/>
+               
+                <img src="{% static 'images/Frame 3.png' %}"/>
+               
+                <img src="{% static 'images/frame4.png' %}"/>
+               
+
+            </div>
+            <div class="write-ups">
+                <P>Website<br> open a url<br></P>
+                <P>Business<br> share your information<br></P>
+                <P>Pdf<br> show a pdf<br></P>
+                <P>Images<br> view gallery images<br></P>
+            </div>
+
+            
+             <div class="frame-col">
+                <img src="{% static 'images/Frame 33849.png' %}"/>
+               
+                <img src="{% static 'images/Frame 33849 (1).png' %}"/>
+               
+                <img src="{% static 'images/Frame 33849 (2).png' %}"/>
+               
+                <img src="{% static 'images/Frame 33849 (3).png' %}"/>
+             </div>
+
+             <div class="write-ups">
+                <P>Health<br> connect to a clinic<br></P>
+                <P>Menu<br> display menu<br></P>
+                <P>Wifi<br>connect to a wifi<br></P>
+                <P>Coupon<br> share a coupon<br></P>
+            </div>
+
+            <div class="frame-col">
+                <img src="{% static 'images/Frame 33849 (4).png' %}"/>
+               
+                <img src="{% static 'images/Framer.png' %}"/>
+               
+                <img src="{% static 'images/Frame 33849 (5).png' %}"/>
+               
+                <img src="{% static 'images/Frame 33849 (6).png' %}"/>
+             </div>
+
+             <div class="write-ups">
+                <P>Video<br>show a video<br></P>
+                <P>Mp3<br>play an audio file<br></P>
+                <P>Apps<br>redirect to app store<br></P>
+                <P>Contact<br> share a contact<br></P>
+            </div>
+            <div class="btn">
+                <button class="btn-1">Cancel x</button>
+                <button class="btn-2">Next</button>
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- Footer -->
+        <div id="downdiv">
+        <img src="{% static 'images/footerLogo.png' %}" alt="" id="footerLogo">
+        <div id="dd">
+          <p><b>Contact</b></p>
+          <p>QRcodegen@gmail.com</p>
+          <p>08165396547</p>
+          <p></p>
+        </div>
+  
+         <div id="dd">
+          <p><b>About Us</b></p>
+          <p>Contact Us</p>
+          <p>Advertise Us</p>
+          <p>Create QRcode</p>
+        </div>
+         <div id="dd">
+          <p><b>Information</b></p>
+          <p>FAQ</p>
+          <p>Privacy policy</p>
+          <p>Cookies policy</p>
+        </div>
+        <div id="dd">
+          <p><b>Review</b></p>
+          <p>Google</p>
+          <p>Twitter</p>
+          <p>Facebook</p>
+        </div>
+  
+         <div id="dd">
+          <p><b>Subscribe to Newsletter</b></p>
+          <p>Get daily update about QR code generator</p>
+          <p></p>
+          <label font-size="7px" color="white" class="">
+            <input type="email" placeholder="email address" class="email">
+            <a href="" id="subs">Subscribe</a>
+          </label>
+   </div> 
+      </div>
+  <div id="footer">
+    <hr></hr>
+    <footer>
+      <p id="3p">Copyright@2022. All right reserved.</p>
+    </footer>
+  </div>
+
+
+    </form>
+</body>
+</html>

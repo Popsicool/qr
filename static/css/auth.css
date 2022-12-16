@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    height: 900px;
+}
+.auth{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.sign-left{
+    background-color: #F8F0E3;
+    padding: 5% 0 5% 5%;
+}
+.sign-right > img{
+    width: 80%;
+}
+.sign-right{
+    background-color: rgba(111, 80, 181, 1);
+    padding: 5% 5% 5% 0;
+}
+.auth-form{
+    background-color: white;
+    padding: 10% 0 0 10%;
+    padding-left: 15px;
+    height: 100%;
+}
+h2{
+    font-size: 40px;
+    font-family: sans-serif;
+}
+p{
+    font-size: 18px;
+    font-family: sans-serif;
+}
+label{
+font-size: 16px;
+}
+input{
+    background-color: rgb(123, 119, 134);
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+    width: 90%;
+}
+.acc-cre{
+    width: 80%;
+    background-color: rgba(111, 80, 181, 1);
+    padding: 1.5%;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.bbb{
+    text-align: center;
+}
+.check{
+    width: 10%;
+    align-self: left;
+}
+.message{
+    background-color: aquamarine;
+    color: black;
+}
+
+.login-options{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: none;
+    background-color: blue;
+}

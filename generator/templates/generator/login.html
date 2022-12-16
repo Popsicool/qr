@@ -1,83 +1,57 @@
-{% load static %}
+{%  load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login page</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{% static 'CSS/stylextra.css' %}">
+  <link rel="stylesheet" href="{% static 'css/auth.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>Sign up</title>
 </head>
 <body>
-   <section class="vh-100" id="background">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-6 text-black" id="left-side">
-  
-          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-            
-            <form action="{% url 'generator:login' %}" method="POST" style="width: 23rem;">
-              {% csrf_token %}
-              <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Welcome Back!</h3>
-              <p class="small mb-5 pb-lg-2" style=" letter-spacing: 1px;">Lets help you generate the best Qr code</p>
-              
-  
-              <div class="form-outline mb-4">
-                
-                <label class="form-label" for="form2Example18">Email</label>
-                <input type="text" id="form2Example18" name="email" class="form-control form-control-lg" />
-                
-              </div>
-  
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form2Example28">Password</label>
-                <input type="password" id="form2Example28" name="password" class="form-control form-control-lg" />
-                
-              </div>
-              
-              <div class="d-flex justify-content-around align-items-center mb-4">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form1Example3"  />
-                  <label class="form-check-label" for="form1Example3"> Keep me logged in for 30days </label>
-                </div>
-                <a href="{% url 'generator:password_reset'%}">Forgot password? click here</a>
-              </div>
-  
-              <div class="pt-1 mb-4">
-                <button class="btn btn-info btn-lg btn-block " type="submit">Sign In</button>
-              </div>
-  
-              <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Dont have an account?</a><span><a href="{% url 'generator:signup' %}" class="link-info"  style=" letter-spacing: 1px;"> Sign up </a></span></p>
-              
-              <div class="divider d-flex align-items-center justify-content-around my-4">
-                <p class="text-center small mb-5 pb-lg-2 text-muted"  style=" letter-spacing: 2px;">or sign in via</p>
-              </div>
-              <!-- <div class="pt-1 mb-4">
-                <button class="btn btn-info btn-lg btn-block  " type="button">Sign in with Google</button>
-              </div> -->
-              <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"><img src="{% static 'images/Google.png' %}"/></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"><img src="{% static 'images/Apple (1).png' %}"/></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"><img src="{% static 'images/Facebook.png' %}"/></i></a>
-              </div>
-   
-            </form>
-  
-          </div>
-  
-        </div>
-        
-        <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="{% static 'images/right-img.png' %}"
-            alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;" >
-        </div>
-      </div>
-    </div>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> 
+  <div class="auth">
+  <div class="sign-left">
+    <div class="auth-form">
 
+    <form action="{% url 'generator:login' %}" method="POST">
+      {% csrf_token %}
+      {% for message in messages %}
+      <p class="message">{{message}}</p>
+      {% endfor %}
+      <h2>Welcome Back!</h2>
+      <p>Lets help you generate your best  QR codes</p>
+  
+      <label for="email">Email</label> <br>
+      <input type="email" name="email" placeholder="abc@gmail.com" required><br>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+  <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br>
+  <br><br>
+  <div class="login-options">
+  <input type="checkbox" class="check"> <p>Keep me logged in for 30 days</p><p><a href="">Forgot password</a></p>
+  </div>
+  <br>    
+  <button class="acc-cre" type="submit">Sign In</button>
+    </form>
+    <p class="bbb">Dont have an account? <a href="{% url 'generator:signup' %}">sign uo</a></p>
+    </div>
+  </div>
+  <div class="sign-right">
+    <img src="{% static 'images/Frame 33985.png' %}" alt="">
+  </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
 </body>
 </html>

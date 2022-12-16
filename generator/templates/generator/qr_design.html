@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<style>
+	.fm-img{
+		background-color: white;
+    	margin: 10%;
+}
+.fm-img > img{
+	width: 100%;
+}
+</style>
+<br><br><br>
+<div class="top1">
+	<div class="ima">
+		<img src="{% static 'images/Group 14.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 1.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 15.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 2.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 16.png' %}" alt="title-img" />
+	</div>
+</div>
+
+<div class="all-cards">
+<h3 class="some">Enter QR code details</h3>
+<div class="qr-form">
+  <div class="qr-form2">
+    <div class="q3-top">
+        <div class="q3-top-left">
+            <h4>Frame</h4>
+
+
+
+        </div>
+        <div class="q3-top-right">
+            <p>Preview</p>
+			<div class="fm-img">
+            <img  src="{% static 'images/image 5.png' %}" alt="">
+			</div>
+            <h3>TeamOstrich</h3>
+
+        </div>
+
+
+    </div>
+    
+  <!-- <button class="back"><  Back</button> -->
+  <button class="next ex" type="submit">Next ></button>
+  
+</div>
+
+
+</div>
+{% endblock %}

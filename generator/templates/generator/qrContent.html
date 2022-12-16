@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<br><br><br>
+<div class="top1">
+	<div class="ima">
+		<img src="{% static 'images/Group 14.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 1.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 15.png' %}" alt="title-img" />
+		<img
+			src="{% static 'images/Arrow 2.png' %}"
+			class="arrows"
+			alt="title-img"
+		/>
+		<img src="{% static 'images/Group 16.png' %}" alt="title-img" />
+	</div>
+</div>
+
+<div class="all-cards">
+<h3 class="some">Enter QR code details</h3>
+<div class="qr-form">
+  <div class="qr-form2">
+    <form action="{% url 'generator:genqr2' %}" class="forme" method="POST">
+      {% csrf_token %}
+      <label for="">Name of QR Code</label><br>
+      <input type="text" placeholder="Enter name of qr code" name="name" required><br>
+      <br><br><br><br><br><br><br><br><br>
+      <label for="">website URL</label><br>
+      <input type="text" name="text" placeholder="Eg www.instagram.com" required><br>
+    
+  </div>
+  <div>
+    <img id="aaa" src="{% static 'images/Rectangle 9182.png' %}" alt="">
+  </div>
+</div>
+<div>
+  <!-- <button class="back"><  Back</button> -->
+  <button class="next ex" type="submit">Next ></button>
+  </form>
+</div>
+
+
+</div>
+{% endblock %}

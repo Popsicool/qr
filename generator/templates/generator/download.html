@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<br><br><br>
+
+
+<h3 class="some" style="color: black; margin: 5% 0 5% 35%; font-size: 30px; font-weight: 500;">Choose Download Format(s) here</h3>
+
+    <div class="download-buttons">
+        <button id="b1" onclick="change(1)">JPG</button>
+        <button id="b2" onclick="change(2)">PNG</button>
+        <button id="b3" onclick="change(3)">SVG</button>
+        <button id="b4" onclick="change(4)">PDF</button>
+    </div>
+    
+  <!-- <button class="back"><  Back</button> -->
+  <form action="{% url 'generator:download_qr' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="type" value="JPG" id="fff">
+  <button class="next ex" type="submit" style="margin: 10% 0 10% 40%; width: 150px;">Download</button>
+  </form>
+  
+  <script>
+    function change(a){
+        if (a == 1)
+        {
+            document.getElementById("fff").value= "JPEG";
+            document.getElementById("b1").classList.add("atv")
+            document.getElementById("b2").classList.remove("atv")
+            document.getElementById("b3").classList.remove("atv")
+            document.getElementById("b4").classList.remove("atv")
+        }
+        else if (a == 2)
+        {
+            document.getElementById("fff").value= "PNG"
+            document.getElementById("b2").classList.add("atv")
+            document.getElementById("b1").classList.remove("atv")
+            document.getElementById("b3").classList.remove("atv")
+            document.getElementById("b4").classList.remove("atv")
+        }
+        else if (a == 3)
+        {
+            document.getElementById("fff").value= "SVG"
+            document.getElementById("b3").classList.add("atv")
+            document.getElementById("b2").classList.remove("atv")
+            document.getElementById("b1").classList.remove("atv")
+            document.getElementById("b4").classList.remove("atv")
+        }
+        else if (a == 4)
+        {
+            document.getElementById("fff").value= "PDF"
+            document.getElementById("b4").classList.add("atv")
+            document.getElementById("b2").classList.remove("atv")
+            document.getElementById("b3").classList.remove("atv")
+            document.getElementById("b1").classList.remove("atv")
+        }
+        
+    }
+  </script>
+{% endblock %}

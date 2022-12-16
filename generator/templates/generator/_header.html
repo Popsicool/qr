@@ -1,0 +1,57 @@
+{% load static %}
+
+<style>
+  #sidebar{
+    background-color: red;
+    position: absolute;
+    width: 25%;
+    height: 600px;
+    display: none;
+  
+}
+</style>
+
+<div class="all-menu">
+  <div class="menu1">
+    <i class="fa fa-bars"></i>
+    <img src="{% static 'images/logo.png' %}"/>
+    <p>QR Gen</p>
+  </div>
+  <div class="search-container">
+    
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+
+  </div>
+  <div class="menu3">
+    <div><i class="fa fa-user"></i></div>
+    <div class="user-details">
+      <p>{{user.name}}</p>
+      <p>{{user.email}}</p>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar">
+  <div class="side1">
+    <img src="{% static 'images/logo.png' %}"/>
+    <p>QR Gen</p>
+    <p onclick="close()">
+    <i class="fa fa-times" onclick="close()"></i>
+    </p>
+  </div>
+  <p>About us</p>
+  <p>FAQs</p>
+  <p>Pricing</p>
+  <p>Contact us</p>
+</div>
+<script>
+  function open(){
+    document.getElementById("sidebar").style.display = 'block';
+  }
+</script>
+<script>
+    function close(){
+    document.getElementById("sidebar").style.display = "none";
+  }
+</script>

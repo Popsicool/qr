@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Generate QR
+    <br>
+
+    <div class="page active" id="p1">
+              <!-- <section id="url"> -->
+                <p class="title">Enter URL or Link</p>
+                <form action="{% url 'generator:generate_qr' %}" method="post" id="url-input">
+                  {% csrf_token %}
+                  <input type="text" placeholder="Input URL/Link" name="url-link" required/>
+                </form>
+                <button type="submit" form="url-input">Generate QR Code</button>
+              <!-- </section> -->
+            </div>
+
+            <div class="page" id="p2">
+              <!-- <section id="store"> -->
+              <p class="title">Enter URL or Link</p>
+              <form action="{% url 'generator:generate_qr' %}" method="post" id="app-store">
+                {% csrf_token %}
+                <input type="url" placeholder="Enter Link to Application" name="text" required/>
+                <input type="submit">Generate QR Code</button>
+              </form>
+              
+              
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p3">
+              <!-- <section id="store"> -->
+              <p class="title">Enter a Text</p>
+              <form action="{% url 'generator:generate_qr' %}" method="post" id="text-input">
+                {% csrf_token %}
+                <textarea name="text" id="message" name="text"></textarea>
+              </form>
+              <button type="submit" form="text-input">Generate QR Code</button>
+              <!-- </section> -->
+            </div>
+</body>
+</html>

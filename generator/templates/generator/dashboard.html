@@ -1,21 +1,101 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"/>
 </head>
 <body>
-    <h3>Welcome {{user.email}}</h3>
-    <a href="{% url 'generator:logout' %}"> Log out</a>
-    Dashboard
-    <br>
-    <a href="{% url 'generator:generate_qr' %}"> Generate QR</a>
-    <br>
-    My QRs <br>
+    <div class="container">
+        <h2 class="header">Welcome back </h2>
+        <p>What would you need a Qr code for?</p>
+        
+        <div class="form">
+        <img scr="{% static 'images/vector2.png' %}"><button class="btnfolder"  type="text">New Folder</button>
+        <a href="{% url 'generator:generate_qr' %}"><button class="btnsubmit" type="submit">Create Qr Code</button></a>
+        </div>
+
+        <div class="coantainer-fluid">
+        <div class="get-Qr">
+            <h2>Get Qr code for whatever purpose and have<br> url in just a scan <br></h2>
+
+             <p>Incase of a special Qr code check <br>our pricing and have 30% off today<br></p>
+           
+              <a href="{% url 'generator:generate_qr' %}"><button type="submit" class="btn">Create Qr Code</button></a>
+                </div>
+
+                <div class="form-fluid">
+            <img  class="img" src="{% static 'images/image 8.png' %}" alt="Qr code"/>
+                </div>
+                </div>
+                <div class="col">
+                    <h2>My Folders</h2>
+                    <button type="submit" class="btn-1">Search</button>
+                </div>
+                <div class="section">
+                    <div class="section-form">
+                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
+                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+                    </div>
+                    <div class="edit">
+                        <p class="0 scan">scans</p>
+                        <p class="edi">edit</p>
+                        <button type="submit" class="btn-3">Details</button>
+                        <button type="submit" class="btn-4">Save progress</button>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="section-b">
+                    <div class="section-formb">
+                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
+                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+                    </div>
+                    <div class="edit">
+                        <p class="2 scan">scans</p>
+                        <p class="edi">edit</p>
+                        <button type="submit" class="btn-3">Details</button>
+                        <button type="submit" class="btn-4">Save progress</button>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="section-c">
+                    <div class="section-formc">
+                        <img class="img-1"  src="{% static 'images/image 8.png' %}"/>
+                        <p>Website <br>Linkedln<br> created 11th dec 2022</p>
+                    </div>
+                    <div class="edit">
+                        <p class="4 scan">scans</p>
+                        <p class="edi">edit</p>
+                        <button type="submit" class="btn-3">Details</button>
+                        <button type="submit" class="btn-4">Save progress</button>
+
+
+                    </div>
+
+
+
+                </div>
+
+           
+            
+
+
+        </div >
+        My QRs <br>
     {% for qr in qr %}
-    <img src="/media/{{qr.qr_code}}" alt="" width="70">
+    <!-- <img src="./logo.png" alt="aa" width="70"> -->
+    <img class="img-1" style="width: 30px;"  src="{% static 'images/image 8.png' %}"/>
     <a href="{% url 'generator:download' qr.id 'png' %}"> Download png</a>
     <a href="{% url 'generator:download' qr.id 'pdf' %}"> Download pdf</a>
     <!-- <a href="{% url 'generator:download' qr.id 'jpg' %}"> Download jpg</a> -->
@@ -24,7 +104,13 @@
     <a href="{% url 'generator:delete' qr.id %}">Delete QR</a>
     <br>
     {% endfor %}
-    
+        
+            
+        
 
+
+</div>
+
+    
 </body>
 </html>
